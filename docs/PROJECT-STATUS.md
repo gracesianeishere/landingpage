@@ -4,7 +4,7 @@
 > session starts with no chat history, read this file first, then read
 > `docs/source/Portfolio-Gracesiane.pdf` (the authoritative source of truth).
 
-_Last updated: 2026-06-17_
+_Last updated: 2026-06-26 — ALL ASSETS COLLECTED; ready to build._
 
 ---
 
@@ -92,11 +92,14 @@ reusable components, type-safe, performance- and SEO-optimized.
   (PNG, 354×472 — small; a higher-res original is welcome but optional).
 
 ## 5. OPEN questions / pending input
-- **Content Writer assets** not yet uploaded:
-  - FullFind & Ku Creatives (p.11) — CEO LinkedIn post screenshots (count TBD)
-  - The Jakarta Post (p.12) — 3 articles: screenshots and/or live article URLs
-- **Live links** (LinkedIn / Instagram / TikTok / X): not provided yet. Only
-  @edtanforfun handle is visible in the PDF. Need confirmed URLs before linking.
+- **Live links DEFERRED:** user can't access LinkedIn right now — skip LinkedIn
+  links for FullFind for now; can add later. Instagram/TikTok/X/LinkedIn profile
+  URLs still not provided. Only @edtanforfun handle is visible in the PDF.
+  Need confirmed URLs before linking anything.
+- **Jakarta Post:** user's article links were Google Drive PDFs → decided to
+  SELF-HOST the PDFs in the repo instead (see inventory). Live jakartapost.com
+  URLs not provided (can add later). Button label must say "writing sample (PDF)",
+  NOT imply it's the live published webpage.
 - **Short-Form Highlights captions:** user was deciding between per-clip labels
   vs caption-free. NOT finalized — do not write captions without user input.
 - **Project image/video labeling:** confirm mapping of carousel slides before
@@ -128,6 +131,20 @@ public/videos/short-form-samples/                 "Short-Form Highlights"
   Other project 2.mp4  720x1280  10s  H.264  2.1M
   Other project 3.mov  720x1280  24s  H.264  21M   (convert to mp4 + compress)
   Other project 4.mov  360x640   70s  H.264  21M   (convert to mp4 + compress)
+
+public/images/projects/fullfind-kucreatives/      FullFind & Ku Creatives (Content Writer)
+  fullfind-1.png   "We Know Videos" re-edit promo (Jack Shanahan)
+  fullfind-2.png   AI thought-leadership post (recommending students)
+  fullfind-3.png   zoolife Snow Leopard Cub edit
+  (LinkedIn posts by Calvin Nathan Manik, CEO of Ku Creatives; live links deferred)
+
+public/images/projects/jakarta-post/              The Jakarta Post (Content Writer) — screenshots
+  jp-1-cancer-survivors.jpg   "To live another day..." (Health, Oct 14 2022, Premium)
+  jp-2-genz-journaling.jpg    "Journaling: Gen Z's latest..." (Lifestyle, Jul 18 2022)
+  jp-3-rent-iphone.jpg        "Rent-an-iPhone promises..." (Lifestyle, Jul 12 2022)
+public/writing-samples/jakarta-post/              The Jakarta Post — PDF writing samples (self-hosted)
+  jp-1-cancer-survivors.pdf   jp-2-genz-journaling.pdf   jp-3-rent-iphone.pdf
+  (NOTE: PDF #3 draft title differs from published headline — display the published one)
 ```
 - **File-naming convention used by user:** `<Project> <post>_<slide>` (e.g.
   `Edtan 1_3`, `Morfo 2_1`). Note inconsistency: `Edtan1_1.jpg` is missing a space.
