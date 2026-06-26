@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdTan For Fun — Brand Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #8B0000;
+      --red-dark: #6B0000;
+      --red-mute: #B84444;
+      --ink:      #0D0D0D;
+      --ink-2:    #3A3A3A;
+      --ink-3:    #6B6B6B;
+      --rule:     #D9D0C8;
+      --cream:    #F8F5F1;
+      --white:    #FFFFFF;
+
+      --page-w: 794px;
+      --page-h: 1123px;
+      --mg:     56px;
+    }
+
+    html { background: #CECECE; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Page Shell ────────────────────────────────────────── */
+    .page {
+      width: var(--page-w);
+      min-height: var(--page-h);
+      background: var(--white);
+      margin: 32px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ─── Typography ────────────────────────────────────────── */
+    .label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .label--muted {
+      color: var(--ink-3);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .body-copy {
+      font-size: 13.5px;
+      line-height: 1.72;
+      color: var(--ink-2);
+    }
+
+    .caption {
+      font-size: 11px;
+      color: var(--ink-3);
+      line-height: 1.5;
+    }
+
+    /* ─── Shared Layout Helpers ─────────────────────────────── */
+    .inner {
+      padding: var(--mg);
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--rule);
+      border: none;
+    }
+
+    .rule--red {
+      background: var(--red);
+      height: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 1 — COVER
+    ═══════════════════════════════════════════════════════════ */
+    .cover {
+      background: var(--red);
+      min-height: var(--page-h);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover__top-bar {
+      padding: 28px var(--mg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .cover__doc-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .cover__year {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .cover__body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--mg);
+      padding-bottom: 72px;
+    }
+
+    /* SVG Logo in cover */
+    .cover__logo {
+      margin-bottom: 64px;
+    }
+
+    .cover__divider {
+      width: 48px;
+      height: 2px;
+      background: rgba(255,255,255,0.35);
+      margin-bottom: 28px;
+    }
+
+    .cover__tagline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      margin-bottom: 56px;
+    }
+
+    .cover__headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .cover__sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      max-width: 380px;
+    }
+
+    .cover__bottom-bar {
+      padding: 24px var(--mg);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cover__bottom-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 2 — ABOUT
+    ═══════════════════════════════════════════════════════════ */
+    .about__header {
+      padding: 48px var(--mg) 0;
+    }
+
+    .about__intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      padding: 40px var(--mg) 0;
+    }
+
+    .about__pull-quote {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .about__pull-quote em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .about__body-col {
+      padding-top: 4px;
+    }
+
+    .about__body-col p + p {
+      margin-top: 16px;
+    }
+
+    .about__full-rule {
+      margin: 40px var(--mg);
+    }
+
+    /* Vision panel */
+    .vision-panel {
+      margin: 0 var(--mg);
+      background: var(--cream);
+      border-left: 3px solid var(--red);
+      padding: 32px 36px;
+    }
+
+    .vision-panel__text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 3 — WHAT WE DO
+    ═══════════════════════════════════════════════════════════ */
+    .pillars__header {
+      padding: 48px var(--mg) 36px;
+    }
+
+    .pillars__header h2 {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .pillar {
+      padding: 36px var(--mg) 36px;
+      border-right: 1px solid var(--rule);
+    }
+
+    .pillar:last-child {
+      border-right: none;
+    }
+
+    .pillar__number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .pillar__icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+    }
+
+    .pillar h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar p {
+      font-size: 12.5px;
+      color: var(--ink-2);
+      line-height: 1.68;
+      margin-bottom: 20px;
+    }
+
+    .pillar__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pillar__list li {
+      font-size: 12px;
+      color: var(--ink-3);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .pillar__list li::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 4 — AUDIENCE SNAPSHOT
+    ═══════════════════════════════════════════════════════════ */
+    .audience__header {
+      padding: 48px var(--mg) 0;
+    }
+
+    .audience__header h2 {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-top: 12px;
+    }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin: 40px var(--mg) 0;
+      border: 1px solid var(--rule);
+    }
+
+    .metric-cell {
+      padding: 28px 24px;
+      border-right: 1px solid var(--rule);
+    }
+
+    .metric-cell:last-child {
+      border-right: none;
+    }
+
+    .metric-cell__value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .metric-cell__unit {
+      font-size: 20px;
+    }
+
+    .metric-cell__label {
+      font-size: 11px;
+      color: var(--ink-3);
+      line-height: 1.4;
+    }
+
+    .engagement-note {
+      margin: 24px var(--mg) 0;
+      padding: 20px 24px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .engagement-note__icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .engagement-note__text {
+      font-size: 12.5px;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    .engagement-note__text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Per-post breakdown */
+    .per-post {
+      margin: 36px var(--mg) 0;
+    }
+
+    .per-post__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 20px;
+    }
+
+    .per-post__bars {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 64px;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bar-row__label {
+      font-size: 12px;
+      color: var(--ink-2);
+      text-align: right;
+    }
+
+    .bar-row__track {
+      height: 8px;
+      background: #EDE8E2;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bar-row__fill {
+      height: 100%;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    .bar-row__value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 5 — DEMOGRAPHICS
+    ═══════════════════════════════════════════════════════════ */
+    .demo__header {
+      padding: 48px var(--mg) 0;
+    }
+
+    .demo__header h2 {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-top: 12px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin: 40px var(--mg) 0;
+    }
+
+    .demo-section h3 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 24px;
+    }
+
+    /* Gender donut (CSS only) */
+    .gender-visual {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 16px;
+    }
+
+    .donut {
+      width: 100px;
+      height: 100px;
+      flex-shrink: 0;
+    }
+
+    .gender-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-dot--red { background: var(--red); }
+    .legend-dot--muted { background: #D9C8C8; }
+
+    .legend-label {
+      font-size: 12px;
+      color: var(--ink-2);
+    }
+
+    .legend-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-left: auto;
+    }
+
+    /* Age bars */
+    .age-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .age-row {
+      display: grid;
+      grid-template-columns: 56px 1fr 44px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .age-row__label {
+      font-size: 11.5px;
+      color: var(--ink-2);
+    }
+
+    .age-row__track {
+      height: 7px;
+      background: #EDE8E2;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .age-row__fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .age-row__fill--primary { background: var(--red); }
+    .age-row__fill--secondary { background: #C47070; }
+    .age-row__fill--tertiary { background: #D9A0A0; }
+    .age-row__fill--light { background: #E8C4C4; }
+    .age-row__fill--faint { background: #F0D8D8; }
+
+    .age-row__value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    .demo-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: var(--cream);
+      font-size: 12px;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    .demo-note strong {
+      color: var(--ink);
+    }
+
+    /* Geographic */
+    .geo-section {
+      margin: 36px var(--mg) 0;
+      padding-top: 36px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .geo-section h3 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 24px;
+    }
+
+    .geo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .geo-pill {
+      padding: 14px 12px;
+      border: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    .geo-pill__flag {
+      font-size: 22px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .geo-pill__name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+
+    .geo-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--ink-3);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 6 — WHY PARTNER
+    ═══════════════════════════════════════════════════════════ */
+    .partner__header {
+      background: var(--ink);
+      padding: 56px var(--mg) 48px;
+    }
+
+    .partner__header .label {
+      color: var(--red-mute);
+    }
+
+    .partner__header h2 {
+      font-size: 40px;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      margin-top: 12px;
+      max-width: 480px;
+      line-height: 1.1;
+    }
+
+    .partner__header p {
+      margin-top: 18px;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.6);
+      max-width: 440px;
+      line-height: 1.65;
+    }
+
+    .partner__reasons {
+      padding: 0 var(--mg);
+    }
+
+    .reason-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+
+    .reason-item:last-child {
+      border-bottom: none;
+    }
+
+    .reason-item__num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      padding-top: 2px;
+    }
+
+    .reason-item__text {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .reason-item__text strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 7 — COLLABORATIONS & HIGHLIGHTS
+    ═══════════════════════════════════════════════════════════ */
+    .collab__header {
+      padding: 48px var(--mg) 36px;
+    }
+
+    .collab__header h2 {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-top: 12px;
+    }
+
+    .collab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .collab-brand {
+      padding: 28px var(--mg);
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .collab-brand:nth-child(even) {
+      border-right: none;
+    }
+
+    .collab-brand:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .collab-brand__dot {
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .collab-brand__name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* Highlights */
+    .highlights {
+      margin: 36px var(--mg) 0;
+      padding-top: 36px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .highlights h3 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 24px;
+    }
+
+    .highlight-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .highlight-card {
+      padding: 20px;
+      background: var(--cream);
+    }
+
+    .highlight-card__text {
+      font-size: 12.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .highlight-card__text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       PAGE 8 — IDEAL PARTNERS + CLOSING
+    ═══════════════════════════════════════════════════════════ */
+    .ideal__header {
+      padding: 48px var(--mg) 36px;
+    }
+
+    .ideal__header h2 {
+      font-size: 36px;
+      letter-spacing: -0.02em;
+      margin-top: 12px;
+    }
+
+    .partner-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      margin: 0 var(--mg);
+    }
+
+    .partner-type {
+      padding: 22px 24px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .partner-type__icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .partner-type__name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* Closing panel */
+    .closing {
+      margin: 48px var(--mg) 0;
+      background: var(--red);
+      padding: 48px 44px;
+    }
+
+    .closing__eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+
+    .closing__mission {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .closing__body {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      max-width: 460px;
+    }
+
+    /* ─── Page Footer ────────────────────────────────────────── */
+    .page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 18px var(--mg);
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .page-footer--dark {
+      border-top-color: rgba(255,255,255,0.1);
+    }
+
+    .page-footer__brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .page-footer__num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      color: var(--ink-3);
+    }
+
+    /* ─── Print ─────────────────────────────────────────────── */
+    @media print {
+      html { background: white; }
+      .page {
+        margin: 0;
+        page-break-after: always;
+        break-after: page;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 1 — COVER
+═══════════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover__top-bar">
+    <span class="cover__doc-label">Brand Profile</span>
+    <span class="cover__year">2025</span>
+  </div>
+
+  <div class="cover__body">
+
+    <!-- Logo SVG Recreation -->
+    <div class="cover__logo">
+      <svg width="320" height="82" viewBox="0 0 320 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Symbol block (replaces E prefix) -->
+        <rect x="0" y="0" width="42" height="64" fill="white" opacity="0.12"/>
+        <!-- Circle symbol -->
+        <circle cx="21" cy="12" r="7" fill="none" stroke="white" stroke-width="2.5"/>
+        <!-- Triangle symbol -->
+        <polygon points="21,26 14,38 28,38" fill="white"/>
+        <!-- Plus symbol -->
+        <rect x="18" y="44" width="6" height="14" fill="white"/>
+        <rect x="13" y="49" width="16" height="4" fill="white"/>
+
+        <!-- EDTAN text -->
+        <text x="52" y="60" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="66" fill="white" letter-spacing="-2">EDTAN</text>
+
+        <!-- FOR FUN text -->
+        <text x="158" y="80" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="white" opacity="0.75" letter-spacing="2">FOR FUN</text>
+      </svg>
+    </div>
+
+    <div class="cover__divider"></div>
+    <p class="cover__tagline">Southeast Asia's Designer Toy &amp; Collectible Platform</p>
+
+    <h1 class="cover__headline">Where Collectors<br>Meet Creators.</h1>
+    <p class="cover__sub">A media and community platform dedicated to designer toys, sofubi, art toys, and collectible culture across Southeast Asia and beyond.</p>
+  </div>
+
+  <div class="cover__bottom-bar">
+    <span class="cover__bottom-label">Confidential · Brand Profile 2025</span>
+    <span class="cover__bottom-label">EdTan For Fun</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 2 — ABOUT + VISION
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="about__header">
+    <span class="label">About</span>
+  </div>
+
+  <div class="about__intro-grid">
+    <div>
+      <p class="about__pull-quote">A platform built for <em>stories</em> as much as <em>collectibles.</em></p>
+    </div>
+    <div class="about__body-col">
+      <p class="body-copy">EdTan For Fun is a media and community platform dedicated to designer toys, sofubi, art toys, and collectible culture.</p>
+      <p class="body-copy">Through editorial storytelling, artist spotlights, event coverage, and community-driven initiatives, EdTan connects collectors, creators, and brands within a growing creative ecosystem.</p>
+      <p class="body-copy">More than showcasing collectibles, EdTan highlights the stories behind the artists, craftsmanship, and creative process that bring each piece to life — while helping emerging creators gain greater visibility within the global designer toy scene.</p>
+    </div>
+  </div>
+
+  <hr class="rule about__full-rule" style="margin: 40px 56px;">
+
+  <div style="padding: 0 56px;">
+    <span class="label" style="display: block; margin-bottom: 20px;">Our Vision</span>
+    <div class="vision-panel">
+      <p class="vision-panel__text">To become one of Southeast Asia's leading platforms for designer toys and collectible culture — connecting collectors, creators, communities, and brands through meaningful creative initiatives.</p>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin: 40px 56px;">
+
+  <div style="padding: 0 56px;">
+    <span class="label" style="display: block; margin-bottom: 16px;">Our Mission</span>
+    <p style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.3;">
+      Connecting collectors.<br>
+      Empowering creators.<br>
+      Growing collectible culture.
+    </p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">02</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 3 — WHAT WE DO
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="pillars__header">
+    <span class="label">What We Do</span>
+    <h2 style="font-size: 36px; letter-spacing: -0.02em; margin-top: 12px;">Three Pillars.<br>One Ecosystem.</h2>
+    <p class="body-copy" style="margin-top: 14px; max-width: 500px; color: var(--ink-3);">EdTan operates across three interconnected disciplines — editorial media, community building, and creative initiatives — each reinforcing the other.</p>
+  </div>
+
+  <div class="pillars-grid">
+
+    <div class="pillar">
+      <div class="pillar__number">01 — Editorial Media</div>
+      <h3>Original Content &amp; Storytelling</h3>
+      <p>We create editorial content that goes beyond product promotion — focusing on the artists, the craft, and the culture that define the designer toy world.</p>
+      <ul class="pillar__list">
+        <li>Designer Toy Features</li>
+        <li>Artist Spotlights</li>
+        <li>Collection Highlights</li>
+        <li>Industry News</li>
+        <li>Event Coverage</li>
+        <li>Product Reviews</li>
+      </ul>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar__number">02 — Community</div>
+      <h3>Connecting Collectors &amp; Creators</h3>
+      <p>We foster an active community where collectors and creators connect, exchange ideas, and grow together through shared passion for the art form.</p>
+      <ul class="pillar__list">
+        <li>EdTanVerse</li>
+        <li>Collector Engagement</li>
+        <li>Creator Discovery</li>
+        <li>Community Discussions</li>
+      </ul>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar__number">03 — Creative Initiatives</div>
+      <h3>Empowering Emerging Artists</h3>
+      <p>EdTan continuously develops programs that encourage creativity and provide emerging artists and designers with platforms to reach wider audiences.</p>
+      <ul class="pillar__list">
+        <li>Design Competitions</li>
+        <li>Artist Collaborations</li>
+        <li>Creator Showcases</li>
+        <li>Workshops</li>
+        <li>Exhibitions</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Content Focus strip -->
+  <div style="margin: 36px 56px 0; padding-top: 32px; border-top: 1px solid var(--rule);">
+    <span class="label label--muted" style="display: block; margin-bottom: 16px;">Content Focus Areas</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Designer Toys</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Sofubi</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Art Toys</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Artist Spotlights</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Event Coverage</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Pop Culture</span>
+      <span style="font-size: 11.5px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--ink-2); padding: 6px 14px; border: 1px solid var(--rule);">Product Reviews</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">03</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 4 — AUDIENCE SNAPSHOT
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="audience__header">
+    <span class="label">Audience Snapshot</span>
+    <h2 class="audience__header h2" style="font-size: 36px; letter-spacing: -0.02em; margin-top: 12px;">Engaged. Niche.<br>Growing.</h2>
+    <p class="body-copy" style="margin-top: 14px; color: var(--ink-3); max-width: 500px;">A highly targeted community with above-average engagement — every metric reflects a genuine, passionate audience rather than passive followers.</p>
+  </div>
+
+  <!-- Key metrics -->
+  <div class="metrics-row">
+    <div class="metric-cell">
+      <div class="metric-cell__value">1,214</div>
+      <div class="metric-cell__label">Instagram<br>Followers</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-cell__value">6.73<span class="metric-cell__unit" style="font-size: 24px;">%</span></div>
+      <div class="metric-cell__label">Average<br>Engagement Rate</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-cell__value">4,821</div>
+      <div class="metric-cell__label">Average Views<br>per Post</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-cell__value">15K<span class="metric-cell__unit" style="font-size: 22px;">+</span></div>
+      <div class="metric-cell__label">Top Post<br>Reach</div>
+    </div>
+  </div>
+
+  <div class="engagement-note" style="margin: 24px 56px 0;">
+    <svg class="engagement-note__icon" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="#8B0000" stroke-width="1.5"/>
+      <path d="M16 10v7M16 20v2" stroke="#8B0000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <p class="engagement-note__text">A 6.73% engagement rate sits well above the typical Instagram benchmark of 1–3%, reflecting a <strong>highly active and invested community</strong> rather than passive follower counts.</p>
+  </div>
+
+  <!-- Per-post performance -->
+  <div class="per-post">
+    <p class="per-post__title">Average Performance per Post</p>
+    <div class="per-post__bars">
+      <div class="bar-row">
+        <span class="bar-row__label">Views</span>
+        <div class="bar-row__track"><div class="bar-row__fill" style="width: 100%;"></div></div>
+        <span class="bar-row__value">4,821</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-row__label">Engagements</span>
+        <div class="bar-row__track"><div class="bar-row__fill" style="width: 1.7%;"></div></div>
+        <span class="bar-row__value">82</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-row__label">Likes</span>
+        <div class="bar-row__track"><div class="bar-row__fill" style="width: 1.6%;"></div></div>
+        <span class="bar-row__value">77</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-row__label">Comments</span>
+        <div class="bar-row__track"><div class="bar-row__fill" style="width: 0.08%;"></div></div>
+        <span class="bar-row__value">4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">04</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 5 — DEMOGRAPHICS
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="demo__header">
+    <span class="label">Audience Demographics</span>
+    <h2 style="font-size: 36px; letter-spacing: -0.02em; margin-top: 12px;">Who Is<br>Our Audience?</h2>
+  </div>
+
+  <div class="demo-grid">
+
+    <!-- Gender -->
+    <div class="demo-section">
+      <h3>Gender Split</h3>
+      <div class="gender-visual">
+        <!-- SVG donut chart -->
+        <svg class="donut" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#EDE8E2" stroke-width="14"/>
+          <!-- 85.2% of circumference = 0.852 * 2π*38 = 203.3 -->
+          <!-- Total circumference = 2π*38 ≈ 238.8 -->
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#8B0000" stroke-width="14"
+            stroke-dasharray="203.3 238.8"
+            stroke-dashoffset="59.7"
+            transform="rotate(-90 50 50)"/>
+          <text x="50" y="46" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="14" fill="#0D0D0D">85%</text>
+          <text x="50" y="60" text-anchor="middle" font-family="Inter" font-size="9" fill="#6B6B6B">Male</text>
+        </svg>
+        <div class="gender-legend">
+          <div class="legend-item">
+            <div class="legend-dot legend-dot--red"></div>
+            <span class="legend-label">Male</span>
+            <span class="legend-value">85.2%</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-dot--muted"></div>
+            <span class="legend-label">Female</span>
+            <span class="legend-value">14.8%</span>
+          </div>
+        </div>
+      </div>
+      <div class="demo-note">
+        Predominantly male audience consistent with global designer toy collector communities.
+      </div>
+    </div>
+
+    <!-- Age -->
+    <div class="demo-section">
+      <h3>Age Distribution</h3>
+      <div class="age-bars">
+        <div class="age-row">
+          <span class="age-row__label">35–44</span>
+          <div class="age-row__track"><div class="age-row__fill age-row__fill--primary" style="width: 100%;"></div></div>
+          <span class="age-row__value">39.1%</span>
+        </div>
+        <div class="age-row">
+          <span class="age-row__label">25–34</span>
+          <div class="age-row__track"><div class="age-row__fill age-row__fill--secondary" style="width: 89%;"></div></div>
+          <span class="age-row__value">34.8%</span>
+        </div>
+        <div class="age-row">
+          <span class="age-row__label">45–54</span>
+          <div class="age-row__track"><div class="age-row__fill age-row__fill--tertiary" style="width: 42%;"></div></div>
+          <span class="age-row__value">16.3%</span>
+        </div>
+        <div class="age-row">
+          <span class="age-row__label">18–24</span>
+          <div class="age-row__track"><div class="age-row__fill age-row__fill--light" style="width: 15%;"></div></div>
+          <span class="age-row__value">6.0%</span>
+        </div>
+        <div class="age-row">
+          <span class="age-row__label">Others</span>
+          <div class="age-row__track"><div class="age-row__fill age-row__fill--faint" style="width: 10%;"></div></div>
+          <span class="age-row__value">3.8%</span>
+        </div>
+      </div>
+      <div class="demo-note" style="margin-top: 16px;">
+        <strong>More than 90%</strong> of our audience falls within the 25–54 age group — a mature, financially established community with deep investment in collectible culture.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Geographic -->
+  <div class="geo-section">
+    <h3>Geographic Reach — Top Markets</h3>
+    <div class="geo-grid">
+      <div class="geo-pill">
+        <span class="geo-pill__flag">🇮🇩</span>
+        <span class="geo-pill__name">Indonesia</span>
+      </div>
+      <div class="geo-pill">
+        <span class="geo-pill__flag">🇵🇭</span>
+        <span class="geo-pill__name">Philippines</span>
+      </div>
+      <div class="geo-pill">
+        <span class="geo-pill__flag">🇹🇼</span>
+        <span class="geo-pill__name">Taiwan</span>
+      </div>
+      <div class="geo-pill">
+        <span class="geo-pill__flag">🇭🇰</span>
+        <span class="geo-pill__name">Hong Kong</span>
+      </div>
+      <div class="geo-pill">
+        <span class="geo-pill__flag">🇹🇭</span>
+        <span class="geo-pill__name">Thailand</span>
+      </div>
+    </div>
+    <p class="geo-note" style="margin-top: 20px;">As EdTan publishes primarily in English, our content reaches collectors and creators beyond Indonesia — connecting us with a broader international audience across the Asia-Pacific region.</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">05</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 6 — WHY PARTNER
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="partner__header">
+    <span class="label" style="color: rgba(255,255,255,0.45);">Partnership</span>
+    <h2 style="font-size: 40px; letter-spacing: -0.025em; color: white; margin-top: 12px; line-height: 1.1;">Why Partner<br>With EdTan?</h2>
+    <p style="margin-top: 18px; font-size: 13.5px; color: rgba(255,255,255,0.6); max-width: 440px; line-height: 1.65;">Partnering with EdTan means reaching a highly targeted audience that genuinely appreciates creativity, craftsmanship, and collectible culture — through authentic editorial storytelling rather than conventional advertising.</p>
+  </div>
+
+  <div class="partner__reasons">
+    <div class="reason-item">
+      <span class="reason-item__num">01</span>
+      <div class="reason-item__text">
+        <strong>Highly Targeted Collectible Audience</strong>
+        A community built around genuine passion — not casual interest. Every follower has a reason to be here.
+      </div>
+    </div>
+    <div class="reason-item">
+      <span class="reason-item__num">02</span>
+      <div class="reason-item__text">
+        <strong>Strong Niche Engagement</strong>
+        A 6.73% average engagement rate demonstrates a community that actively participates, not just passively scrolls.
+      </div>
+    </div>
+    <div class="reason-item">
+      <span class="reason-item__num">03</span>
+      <div class="reason-item__text">
+        <strong>Editorial-First Storytelling</strong>
+        Content that feels authentic because it is — collaborations are shaped around stories, not ad slots.
+      </div>
+    </div>
+    <div class="reason-item">
+      <span class="reason-item__num">04</span>
+      <div class="reason-item__text">
+        <strong>English-First, Regionally Rooted</strong>
+        English-language content that naturally connects brands to audiences across Southeast Asia and beyond.
+      </div>
+    </div>
+    <div class="reason-item">
+      <span class="reason-item__num">05</span>
+      <div class="reason-item__text">
+        <strong>Trusted Platform for the Community</strong>
+        A recognized voice within the designer toy and collectible enthusiast space — credibility built over time.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">06</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 7 — COLLABORATIONS & HIGHLIGHTS
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="collab__header">
+    <span class="label">Previous Collaborations</span>
+    <h2 style="font-size: 36px; letter-spacing: -0.02em; margin-top: 12px;">Brands We've<br>Worked With</h2>
+    <p class="body-copy" style="margin-top: 14px; color: var(--ink-3); max-width: 500px;">EdTan has collaborated with and featured various brands and key industry players across the designer toy ecosystem.</p>
+  </div>
+
+  <div class="collab-grid">
+    <div class="collab-brand">
+      <div class="collab-brand__dot"></div>
+      <span class="collab-brand__name">Amazing Toy Show</span>
+    </div>
+    <div class="collab-brand">
+      <div class="collab-brand__dot"></div>
+      <span class="collab-brand__name">Unbox Industries</span>
+    </div>
+    <div class="collab-brand">
+      <div class="collab-brand__dot"></div>
+      <span class="collab-brand__name">ThePrjctPlayground</span>
+    </div>
+    <div class="collab-brand">
+      <div class="collab-brand__dot"></div>
+      <span class="collab-brand__name">ERON Collects</span>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <h3>Brand Highlights</h3>
+    <div class="highlight-cards">
+      <div class="highlight-card">
+        <p class="highlight-card__text">Built <strong>EdTanVerse</strong> — a growing community space dedicated to designer toy and collectible enthusiasts.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="highlight-card__text">Event coverage consistently generates strong engagement, with top-performing posts reaching <strong>10K–15K+ views</strong>.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="highlight-card__text">Recognized for delivering editorial content focused on artists, collectible stories, and industry events.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="highlight-card__text">Continues to expand its role beyond media through community initiatives and <strong>creator-focused programs</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">07</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 8 — IDEAL PARTNERS + CLOSING
+═══════════════════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 56px;">
+
+  <div class="ideal__header">
+    <span class="label">Let's Work Together</span>
+    <h2 style="font-size: 36px; letter-spacing: -0.02em; margin-top: 12px;">Ideal<br>Collaboration Partners</h2>
+    <p class="body-copy" style="margin-top: 14px; color: var(--ink-3); max-width: 500px;">EdTan is open to partnerships with any brand, studio, creator, or organization that shares a genuine connection to the designer toy and creative collectible ecosystem.</p>
+  </div>
+
+  <div class="partner-types">
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <rect x="1" y="1" width="26" height="26" stroke="#8B0000" stroke-width="1.5"/>
+        <rect x="7" y="10" width="14" height="10" stroke="#8B0000" stroke-width="1.5"/>
+        <circle cx="14" cy="10" r="4" stroke="#8B0000" stroke-width="1.5"/>
+      </svg>
+      <span class="partner-type__name">Designer Toy Brands</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="#8B0000" stroke-width="1.5"/>
+        <path d="M8 14h12M14 8v12" stroke="#8B0000" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="partner-type__name">Sofubi Studios</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <polygon points="14,2 26,26 2,26" stroke="#8B0000" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span class="partner-type__name">Art Toy Creators</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <rect x="2" y="6" width="24" height="18" rx="1" stroke="#8B0000" stroke-width="1.5"/>
+        <path d="M2 11h24" stroke="#8B0000" stroke-width="1.5"/>
+        <circle cx="7" cy="8.5" r="1.5" fill="#8B0000"/>
+        <circle cx="12" cy="8.5" r="1.5" fill="#8B0000"/>
+      </svg>
+      <span class="partner-type__name">Toy Conventions &amp; Events</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <rect x="3" y="8" width="22" height="16" stroke="#8B0000" stroke-width="1.5"/>
+        <path d="M8 8V5a6 6 0 0 1 12 0v3" stroke="#8B0000" stroke-width="1.5"/>
+      </svg>
+      <span class="partner-type__name">Collectible Retailers</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <path d="M14 3L25 9v10l-11 6L3 19V9z" stroke="#8B0000" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span class="partner-type__name">Creative Lifestyle Brands</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <rect x="2" y="5" width="24" height="18" stroke="#8B0000" stroke-width="1.5"/>
+        <path d="M2 14h24M9 5v18" stroke="#8B0000" stroke-width="1.5"/>
+      </svg>
+      <span class="partner-type__name">Art Galleries</span>
+    </div>
+    <div class="partner-type">
+      <svg class="partner-type__icon" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="#8B0000" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="5" stroke="#8B0000" stroke-width="1.5"/>
+        <path d="M14 1v4M14 23v4M1 14h4M23 14h4" stroke="#8B0000" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="partner-type__name">Pop Culture &amp; Creative Communities</span>
+    </div>
+  </div>
+
+  <!-- Closing Panel -->
+  <div class="closing">
+    <p class="closing__eyebrow">Looking Forward</p>
+    <p class="closing__mission">Connecting collectors.<br>Empowering creators.<br>Growing collectible culture.</p>
+    <p class="closing__body">EdTan For Fun is committed to growing beyond a media platform — developing initiatives that empower creators, strengthen communities, and expand the designer toy ecosystem across Southeast Asia and beyond.</p>
+  </div>
+
+  <div class="page-footer">
+    <span class="page-footer__brand">EdTan For Fun</span>
+    <span class="page-footer__num">08</span>
+  </div>
+</div>
+
+</body>
+</html>
