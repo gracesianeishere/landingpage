@@ -4,7 +4,18 @@
 > session starts with no chat history, read this file first, then read
 > `docs/source/Portfolio-Gracesiane.pdf` (the authoritative source of truth).
 
-_Last updated: 2026-06-26 — ALL ASSETS COLLECTED; ready to build._
+_Last updated: 2026-06-26 — SITE BUILT (v1). Builds clean; deployed pending._
+
+## STATUS: v1 BUILT ✅
+- Next.js 15 + React 19 + Tailwind v4 app. `npm run build` passes (static).
+- Sections live: Hero, About, What I Do, Selected Work (+project modals),
+  Short-Form Highlights, Experience, Contact, Footer.
+- Media optimized into `public/media/` (mov→mp4, compressed, posters).
+- Fonts via @fontsource (Fraunces/Inter/JetBrains Mono) — no Google Fonts network dep.
+- Run locally: `npm install` then `npm run dev` (or `npm run build && npm run start`).
+- Screenshot tooling: `npm i -D playwright`, browser at /opt/pw-browsers/chromium.
+- NEXT: user review of screenshots → tweaks → deploy to Vercel (guide user).
+- Pending content: live social links (LinkedIn etc.), optional higher-res headshot.
 
 ---
 
