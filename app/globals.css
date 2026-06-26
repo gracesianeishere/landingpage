@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* ----------------------------- Design tokens ----------------------------- */
+@theme {
+  /* Editorial Collector palette — warm, off-white, never pure #fff */
+  --color-canvas: #f6f2ea; /* warm ivory base */
+  --color-surface: #fbf9f4; /* lifted surface */
+  --color-sand: #efe9dd; /* subtle panel */
+  --color-ink: #1c1916; /* warm near-black */
+  --color-stone: #6b6258; /* muted text */
+  --color-stone-light: #938a7e;
+  --color-blush: #e7b5ae; /* soft pink accent */
+  --color-blush-deep: #c07a72; /* accessible pink for small text/links */
+  --color-hair: #e2dacc; /* hairline borders */
+
+  --font-display: "Fraunces Variable", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", monospace;
+
+  --shadow-soft: 0 1px 2px rgba(28, 25, 22, 0.04), 0 12px 40px rgba(28, 25, 22, 0.06);
+}
+
+/* ------------------------------- Base ------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blush-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+  }
+}
+
+/* ------------------------------ Utilities ------------------------------ */
+@layer utilities {
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+
+  /* Scroll-reveal: hidden until .is-visible is added by IntersectionObserver */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* hide scrollbar for horizontal media rails */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
