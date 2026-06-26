@@ -91,6 +91,29 @@ reusable components, type-safe, performance- and SEO-optimized.
 - **Profile photo:** received and in place at `public/images/profile.jpg`
   (PNG, 354×472 — small; a higher-res original is welcome but optional).
 
+## 4b. DESIGN DIRECTION — "Editorial Collector"
+Source: `docs/source/Aesthetic-Editorial-Collector.pdf` (user-provided aesthetic brief).
+- **Mood:** premium magazine × gallery exhibition × creative strategist portfolio,
+  with a subtle analog/tactile touch.
+- **Typography-first:** words feel premium; hero reads like a magazine opening
+  spread (big headline + supporting line). Serif display + clean sans.
+- **Off-white, NOT pure white:** use ivory / warm beige / light stone (avoid
+  #FFFFFF). Soft pink accent (from her portfolio) used sparingly.
+- **Magazine-style grid** layout; large, authentic photography (designer-toy
+  event shots, BTS, workspace) — NOT stock photos or floating device mockups.
+- **Publication-style section names** suggested by the brief: Selected Work,
+  Brands & Communities, Experiments, Notes & Insights, About Me. ADAPT to real
+  content — do NOT create empty sections (e.g. no blog = no "Notes & Insights"
+  unless mapped to the Jakarta Post published articles).
+- ⚠️ **TITLE CONFLICT:** the aesthetic PDF's EXAMPLE headline says "Social Media
+  Strategist & Community Builder" — that is just a STYLE example, NOT her title.
+  Keep her real title: "Social Media Specialist & Content Writer" (portfolio p.1-2).
+- **Structure decision (user):** "visually appealing but still engaging for
+  visitors/potential clients." Plan: single-page editorial scroll + project
+  detail expansion (modal/lightbox) for the heavy media.
+- **Hosting:** user unsure → recommend Vercel (free, best Next.js fit); guide later.
+- **Build:** user is a non-coder → I lead end-to-end, plan-first, explain simply.
+
 ## 5. OPEN questions / pending input
 - **Live links DEFERRED:** user can't access LinkedIn right now — skip LinkedIn
   links for FullFind for now; can add later. Instagram/TikTok/X/LinkedIn profile
