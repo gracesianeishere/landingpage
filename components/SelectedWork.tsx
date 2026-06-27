@@ -9,21 +9,6 @@ import { Carousel } from "./Carousel";
 import { VideoPlayer } from "./VideoPlayer";
 import { Reveal } from "./Reveal";
 
-/** Brand logo featured on a white panel over a soft ground. */
-function LogoCover({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="absolute inset-0 bg-sand transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-      <div className="absolute inset-0 flex items-center justify-center p-6 pb-20">
-        <div className="flex aspect-square w-[64%] items-center justify-center rounded-2xl border border-hair bg-white p-7 shadow-soft">
-          <div className="relative h-full w-full">
-            <Image src={src} alt={alt} fill sizes="320px" className="object-contain" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
   return (
     <button
@@ -33,17 +18,13 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       aria-label={`Open ${project.name}`}
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-hair bg-surface">
-        {project.logo ? (
-          <LogoCover src={project.logo.src} alt={project.logo.alt} />
-        ) : (
-          <Image
-            src={project.cover.src}
-            alt={project.cover.alt}
-            fill
-            sizes="(max-width: 768px) 90vw, 540px"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-          />
-        )}
+        <Image
+          src={project.cover.src}
+          alt={project.cover.alt}
+          fill
+          sizes="(max-width: 768px) 90vw, 540px"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/5 to-ink/0" />
         <span className="absolute left-4 top-4 rounded-full bg-wine/90 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-cream backdrop-blur">
           {project.discipline === "Social Media Specialist" ? "Social" : "Writing"}

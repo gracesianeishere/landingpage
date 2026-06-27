@@ -209,9 +209,7 @@ export const projects: Project[] = [
     contribution:
       "Developed thought leadership content for the CEO's LinkedIn presence.", // p.11
     note: "Written for Calvin Nathan Manik, CEO of Ku Creatives.", // p.11
-    coverKind: "linkedin",
-    logo: { src: "/media/logos/ku-creatives.jpg", alt: "Ku Creatives logo" },
-    cover: img("/media/fullfind/post-1.png", "FullFind & Ku Creatives — LinkedIn post"),
+    cover: img("/media/logos/ku-cover.png", "Ku Creatives logo"),
     gallery: [
       img("/media/fullfind/post-1.png", "LinkedIn post — 'We Know Videos' re-edit project"),
       img("/media/fullfind/post-2.png", "LinkedIn post — leveraging AI as a creative assistant"),
@@ -228,9 +226,7 @@ export const projects: Project[] = [
     period: "2022",
     summary:
       "Articles published on The Jakarta Post through a media agency engagement.", // p.12
-    coverKind: "press",
-    logo: { src: "/media/logos/jakarta-post.png", alt: "The Jakarta Post logo" },
-    cover: img("/media/jakarta/jp-1-cancer-survivors.jpg", "The Jakarta Post article headline"),
+    cover: img("/media/logos/jp-cover.png", "The Jakarta Post logo"),
     gallery: [],
     articles: [
       {
