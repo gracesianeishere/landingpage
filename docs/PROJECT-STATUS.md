@@ -6,6 +6,16 @@
 
 _Last updated: 2026-06-26 — SITE BUILT (v1). Builds clean; deployed pending._
 
+## STATUS: v2 — RETHEMED ✅
+- Palette changed (user refs) to WINE & CREAM: --color-wine #6e1a2a, canvas cream
+  #f4ebda, ink #2a1417. Wine color-blocks: About, Short-Form, Contact.
+- Added Pinyon Script (@fontsource/pinyon-script) for tagline; Fraunces italic
+  flourishes in section headings.
+- Branded covers for content-writer cards (coverKind: "linkedin" | "press" in
+  lib/content.ts → rendered in components/SelectedWork.tsx). Photo projects use
+  coverKind "image" (default).
+- LinkedIn live links still deferred (user away from LinkedIn).
+
 ## STATUS: v1 BUILT ✅
 - Next.js 15 + React 19 + Tailwind v4 app. `npm run build` passes (static).
 - Sections live: Hero, About, What I Do, Selected Work (+project modals),
