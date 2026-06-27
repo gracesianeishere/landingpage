@@ -6,6 +6,24 @@
 
 _Last updated: 2026-06-26 — SITE BUILT (v1). Builds clean; deployed pending._
 
+## STATUS: v3 — LIVE & REVISED ✅
+- DEPLOYED on Vercel. Live URL: https://landingpage-seven-inky.vercel.app
+  (production deploys from `main`; project "landingpage", team gracesianeishere99).
+- Deploy workflow: edit on `claude/...` branch → commit → ff-merge into `main` →
+  push `main` → Vercel auto-rebuilds (~1-2 min). NEVER need to re-import.
+- Vercel fix that was needed: Framework Preset had to be set to **Next.js**
+  (it imported as "Other" while the repo was empty).
+- Revisions done since launch:
+  - Hero: removed the "." accent after the name.
+  - About tagline → "Welcome to my little space of creativity!", italic serif
+    (Fraunces), lighter color (#f0d6cc), smaller size. Pinyon Script removed.
+  - EdTan & Morfo: split into two separate labeled carousels (Carousel 01/02);
+    removed "In collaboration with @..." line.
+  - Content-writer cards (FullFind, Jakarta Post): now use full-bleed 4:5 white
+    logo covers the user supplied (public/media/logos/ku-cover.png, jp-cover.png).
+    Old logo files + the StackCover/LogoCover experiments removed.
+- Still pending (user's side): LinkedIn / social live links; optional hi-res headshot.
+
 ## STATUS: v2 — RETHEMED ✅
 - Palette changed (user refs) to WINE & CREAM: --color-wine #6e1a2a, canvas cream
   #f4ebda, ink #2a1417. Wine color-blocks: About, Short-Form, Contact.
