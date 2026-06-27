@@ -33,6 +33,7 @@ export type Project = {
   contribution?: string;
   collaborators?: string;
   coverKind?: "image" | "linkedin" | "press"; // "image" = photo cover (default)
+  logo?: { src: string; alt: string }; // brand logo cover (content-writer projects)
   cover: MediaItem;
   gallery?: MediaItem[]; // single gallery (e.g. FullFind)
   galleries?: { title: string; items: MediaItem[] }[]; // multiple distinct carousels
@@ -209,6 +210,7 @@ export const projects: Project[] = [
       "Developed thought leadership content for the CEO's LinkedIn presence.", // p.11
     note: "Written for Calvin Nathan Manik, CEO of Ku Creatives.", // p.11
     coverKind: "linkedin",
+    logo: { src: "/media/logos/ku-creatives.jpg", alt: "Ku Creatives logo" },
     cover: img("/media/fullfind/post-1.png", "FullFind & Ku Creatives — LinkedIn post"),
     gallery: [
       img("/media/fullfind/post-1.png", "LinkedIn post — 'We Know Videos' re-edit project"),
@@ -227,6 +229,7 @@ export const projects: Project[] = [
     summary:
       "Articles published on The Jakarta Post through a media agency engagement.", // p.12
     coverKind: "press",
+    logo: { src: "/media/logos/jakarta-post.png", alt: "The Jakarta Post logo" },
     cover: img("/media/jakarta/jp-1-cancer-survivors.jpg", "The Jakarta Post article headline"),
     gallery: [],
     articles: [

@@ -8,57 +8,18 @@ import { projects, type Project } from "@/lib/content";
 import { Carousel } from "./Carousel";
 import { VideoPlayer } from "./VideoPlayer";
 import { Reveal } from "./Reveal";
-import { cn } from "@/lib/utils";
 
-/** Overlapping "clippings" collage of real screenshots, on a colored ground. */
-function StackCover({ images, variant }: { images: string[]; variant: "wine" | "cream" }) {
-  const wine = variant === "wine";
-  const cards = [
-    { left: "5%", top: "15%", rot: -7, z: 1 },
-    { left: "47%", top: "10%", rot: 7, z: 2 },
-    { left: "25%", top: "31%", rot: -2, z: 3 },
-  ];
+/** Brand logo featured on a white panel over a soft ground. */
+function LogoCover({ src, alt }: { src: string; alt: string }) {
   return (
-    <div
-      className={cn(
-        "absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.03]",
-        wine ? "bg-wine" : "bg-canvas"
-      )}
-    >
-      {wine && (
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, var(--color-cream) 1px, transparent 0)",
-            backgroundSize: "18px 18px",
-          }}
-        />
-      )}
-      {images.slice(0, 3).map((src, i) => (
-        <div
-          key={src}
-          className={cn(
-            "absolute w-[48%] overflow-hidden rounded-lg shadow-xl",
-            wine ? "border-2 border-cream/85" : "border border-ink/10 ring-1 ring-black/5"
-          )}
-          style={{
-            left: cards[i].left,
-            top: cards[i].top,
-            transform: `rotate(${cards[i].rot}deg)`,
-            zIndex: cards[i].z,
-          }}
-        >
-          <div className="relative aspect-[4/3]">
-            <Image src={src} alt="" fill sizes="280px" className="object-cover object-top" />
+    <div className="absolute inset-0 bg-sand transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+      <div className="absolute inset-0 flex items-center justify-center p-6 pb-20">
+        <div className="flex aspect-square w-[64%] items-center justify-center rounded-2xl border border-hair bg-white p-7 shadow-soft">
+          <div className="relative h-full w-full">
+            <Image src={src} alt={alt} fill sizes="320px" className="object-contain" />
           </div>
         </div>
-      ))}
-      {wine && (
-        <span className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-md bg-cream/15 font-display text-lg text-cream">
-          in
-        </span>
-      )}
+      </div>
     </div>
   );
 }
@@ -72,10 +33,8 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       aria-label={`Open ${project.name}`}
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-hair bg-surface">
-        {project.coverKind === "linkedin" ? (
-          <StackCover images={(project.gallery ?? []).map((g) => g.src)} variant="wine" />
-        ) : project.coverKind === "press" ? (
-          <StackCover images={(project.articles ?? []).map((a) => a.image)} variant="cream" />
+        {project.logo ? (
+          <LogoCover src={project.logo.src} alt={project.logo.alt} />
         ) : (
           <Image
             src={project.cover.src}
