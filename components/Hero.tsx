@@ -16,7 +16,6 @@ export function Hero() {
         <Reveal delay={80}>
           <h1 className="font-display text-[clamp(3rem,11vw,9rem)] leading-[0.92] tracking-[-0.03em]">
             {profile.firstName}
-            <span className="text-blush-deep">.</span>
           </h1>
         </Reveal>
 
