@@ -25,8 +25,8 @@ export function Hero() {
 
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl font-display text-2xl leading-snug text-ink sm:text-3xl">
-            Social Media Specialist <span className="text-stone-light">&amp;</span> Content
-            Writer.
+            Social Media Specialist <span className="italic text-blush-deep">&amp;</span>{" "}
+            Content Writer.
           </p>
         </Reveal>
 
@@ -40,7 +40,7 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-canvas transition hover:bg-ink/85"
+              className="group inline-flex items-center gap-2 rounded-full bg-wine px-6 py-3 text-sm text-cream transition hover:bg-wine-deep"
             >
               View selected work
               <ArrowDownRight

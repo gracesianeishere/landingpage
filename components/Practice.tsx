@@ -11,7 +11,7 @@ export function Practice() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
-            Two disciplines, one creative practice.
+            Two disciplines, one creative <em className="italic text-blush-deep">practice</em>.
           </h2>
         </Reveal>
 

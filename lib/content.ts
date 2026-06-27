@@ -32,6 +32,7 @@ export type Project = {
   summary: string; // PDF wording
   contribution?: string;
   collaborators?: string;
+  coverKind?: "image" | "linkedin" | "press"; // "image" = photo cover (default)
   cover: MediaItem;
   gallery: MediaItem[];
   reels?: MediaItem[];
@@ -188,6 +189,7 @@ export const projects: Project[] = [
     contribution:
       "Developed thought leadership content for the CEO's LinkedIn presence.", // p.11
     note: "Written for Calvin Nathan Manik, CEO of Ku Creatives.", // p.11
+    coverKind: "linkedin",
     cover: img("/media/fullfind/post-1.png", "FullFind & Ku Creatives — LinkedIn post"),
     gallery: [
       img("/media/fullfind/post-1.png", "LinkedIn post — 'We Know Videos' re-edit project"),
@@ -205,6 +207,7 @@ export const projects: Project[] = [
     period: "2022",
     summary:
       "Articles published on The Jakarta Post through a media agency engagement.", // p.12
+    coverKind: "press",
     cover: img("/media/jakarta/jp-1-cancer-survivors.jpg", "The Jakarta Post article headline"),
     gallery: [],
     articles: [

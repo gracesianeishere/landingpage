@@ -10,7 +10,7 @@ export function Experience() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
-            A timeline of selected engagements.
+            A timeline of <em className="italic text-blush-deep">selected</em> engagements.
           </h2>
         </Reveal>
 

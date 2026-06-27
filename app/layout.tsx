@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/fraunces";
+import "@fontsource-variable/fraunces/standard-italic.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/pinyon-script";
 import "./globals.css";
 import { profile } from "@/lib/content";
 
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f2ea",
+  themeColor: "#6e1a2a",
   width: "device-width",
   initialScale: 1,
 };

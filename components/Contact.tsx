@@ -7,7 +7,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 bg-ink px-5 py-24 text-canvas sm:px-8 lg:py-32"
+      className="scroll-mt-20 bg-wine px-5 py-24 text-cream sm:px-8 lg:py-32"
     >
       <div className="relative mx-auto max-w-6xl">
         <Starburst
@@ -19,7 +19,7 @@ export function Contact() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="max-w-3xl font-display text-4xl leading-[1.05] sm:text-6xl">
-            Let&apos;s create something worth following.
+            Let&apos;s create something <em className="italic text-blush">worth following</em>.
           </h2>
         </Reveal>
         <Reveal delay={160}>

@@ -9,6 +9,48 @@ import { Carousel } from "./Carousel";
 import { VideoPlayer } from "./VideoPlayer";
 import { Reveal } from "./Reveal";
 
+function LinkedInCover() {
+  return (
+    <div className="absolute inset-0 bg-wine transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+      <div
+        className="absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, var(--color-cream) 1px, transparent 0)",
+          backgroundSize: "18px 18px",
+        }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -top-10 left-2 select-none font-display text-[12rem] leading-none text-cream/10"
+      >
+        &ldquo;
+      </span>
+      <span className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-md bg-cream/15 font-display text-lg text-cream">
+        in
+      </span>
+    </div>
+  );
+}
+
+function PressCover() {
+  return (
+    <div className="absolute inset-0 bg-canvas transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+      <div className="absolute inset-0 grid place-items-center">
+        <span
+          aria-hidden
+          className="select-none font-display text-[7rem] leading-none text-wine/12"
+        >
+          &ldquo;&rdquo;
+        </span>
+      </div>
+      <span className="absolute inset-x-0 top-[60%] text-center font-mono text-[10px] uppercase tracking-[0.3em] text-wine/55">
+        Published Journalism · 2022
+      </span>
+    </div>
+  );
+}
+
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
   return (
     <button
@@ -18,15 +60,21 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       aria-label={`Open ${project.name}`}
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-hair bg-surface">
-        <Image
-          src={project.cover.src}
-          alt={project.cover.alt}
-          fill
-          sizes="(max-width: 768px) 90vw, 540px"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/0 to-ink/0" />
-        <span className="absolute left-4 top-4 rounded-full bg-canvas/90 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-ink">
+        {project.coverKind === "linkedin" ? (
+          <LinkedInCover />
+        ) : project.coverKind === "press" ? (
+          <PressCover />
+        ) : (
+          <Image
+            src={project.cover.src}
+            alt={project.cover.alt}
+            fill
+            sizes="(max-width: 768px) 90vw, 540px"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/5 to-ink/0" />
+        <span className="absolute left-4 top-4 rounded-full bg-wine/90 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-cream backdrop-blur">
           {project.discipline === "Social Media Specialist" ? "Social" : "Writing"}
         </span>
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
@@ -153,7 +201,7 @@ export function SelectedWork() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
-            Brands &amp; communities I&apos;ve helped grow.
+            Brands &amp; communities I&apos;ve helped <em className="italic text-blush-deep">grow</em>.
           </h2>
         </Reveal>
 

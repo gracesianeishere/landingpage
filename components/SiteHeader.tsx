@@ -53,7 +53,7 @@ export function SiteHeader() {
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-ink px-4 py-2 text-sm text-canvas transition hover:bg-ink/85"
+            className="rounded-full bg-wine px-4 py-2 text-sm text-cream transition hover:bg-wine-deep"
           >
             Let&apos;s talk
           </a>
