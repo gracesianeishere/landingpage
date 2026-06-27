@@ -26,7 +26,7 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <p className="mt-7 max-w-xl font-display text-2xl italic leading-snug text-[#f0d6cc] sm:text-3xl">
+            <p className="mt-7 max-w-xl font-display text-xl italic leading-snug text-[#f0d6cc] sm:text-2xl">
               {profile.tagline}
             </p>
           </Reveal>

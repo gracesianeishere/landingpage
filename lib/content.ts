@@ -52,7 +52,7 @@ export const profile = {
     "Greetings! I'm Gracesiane — a Social Media Specialist and Content Writer.",
   summary:
     "I specialize in content planning and ideation, social media management, and copywriting. I help personal brands and businesses grow across Instagram, TikTok, X, and LinkedIn.",
-  tagline: "Welcome to Gracesiane's little space of creativity.", // p.2
+  tagline: "Welcome to my little space of creativity!", // p.2 (wording per user)
   platforms: ["Instagram", "TikTok", "X", "LinkedIn"], // p.2
   photo: { src: "/media/profile.jpg", alt: "Portrait of Gracesiane J." },
   email: "work.gsjaklyn@gmail.com", // p.13
