@@ -13,8 +13,13 @@ export function SiteFooter() {
           <a href={`mailto:${profile.email}`} className="transition-colors hover:text-ink">
             {profile.email}
           </a>
-          <a href={`tel:${profile.phoneHref}`} className="transition-colors hover:text-ink">
-            {profile.phone}
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            {profile.linkedinLabel}
           </a>
         </div>
       </div>

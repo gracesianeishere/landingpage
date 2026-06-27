@@ -57,8 +57,8 @@ const jsonLd = {
   name: profile.name,
   jobTitle: "Social Media Specialist & Content Writer",
   email: `mailto:${profile.email}`,
-  telephone: profile.phone,
   url: siteUrl,
+  sameAs: [profile.linkedin],
   knowsAbout: [
     "Social media strategy",
     "Content writing",

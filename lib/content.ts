@@ -57,8 +57,8 @@ export const profile = {
   platforms: ["Instagram", "TikTok", "X", "LinkedIn"], // p.2
   photo: { src: "/media/profile.jpg", alt: "Portrait of Gracesiane J." },
   email: "work.gsjaklyn@gmail.com", // p.13
-  phone: "+6285647989835", // p.13
-  phoneHref: "+6285647989835",
+  linkedin: "https://www.linkedin.com/in/gracesiane-jaklyn-167157214/", // user-provided
+  linkedinLabel: "LinkedIn",
 };
 
 /* ----------------------------- Disciplines / capabilities (p.4, p.10) ---------------------------- */
