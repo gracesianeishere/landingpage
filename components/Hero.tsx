@@ -1,6 +1,5 @@
 import { ArrowDownRight } from "lucide-react";
 import { profile } from "@/lib/content";
-import { Starburst } from "./Starburst";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
@@ -9,8 +8,6 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden px-5 pb-20 pt-32 sm:px-8 sm:pt-40 lg:pb-28 lg:pt-48"
     >
-      <Starburst className="pointer-events-none absolute -right-16 -top-10 h-64 w-64 opacity-70 sm:h-96 sm:w-96" />
-
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="kicker mb-6">Portfolio — {profile.title}</p>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { profile } from "@/lib/content";
 import { Reveal } from "./Reveal";
-import { Starburst } from "./Starburst";
 
 export function About() {
   return (
@@ -54,7 +53,6 @@ export function About() {
         <div className="lg:col-span-5">
           <Reveal delay={160}>
             <div className="relative mx-auto w-full max-w-xs">
-              <Starburst className="absolute -right-6 -top-6 h-24 w-24 opacity-90" color="var(--color-blush)" />
               <div className="relative overflow-hidden rounded-2xl border border-cream/15 bg-wine-deep shadow-soft">
                 <Image
                   src={profile.photo.src}

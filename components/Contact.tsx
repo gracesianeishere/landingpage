@@ -1,7 +1,6 @@
 import { Mail, Phone, ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/content";
 import { Reveal } from "./Reveal";
-import { Starburst } from "./Starburst";
 
 export function Contact() {
   return (
@@ -10,10 +9,6 @@ export function Contact() {
       className="scroll-mt-20 bg-wine px-5 py-24 text-cream sm:px-8 lg:py-32"
     >
       <div className="relative mx-auto max-w-6xl">
-        <Starburst
-          className="pointer-events-none absolute -right-10 -top-16 h-40 w-40 opacity-30"
-          color="var(--color-blush)"
-        />
         <Reveal>
           <p className="kicker mb-6 text-blush">05 — Contact</p>
         </Reveal>
