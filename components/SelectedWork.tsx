@@ -128,7 +128,18 @@ function ProjectDetail({ project }: { project: Project }) {
         </dl>
       )}
 
-      {project.gallery.length > 0 && <Carousel items={project.gallery} />}
+      {project.galleries
+        ? project.galleries.map((g, i) => (
+            <div key={i} className="space-y-4 border-t border-hair pt-6 first:border-0 first:pt-0">
+              <p className="kicker">
+                {g.title} · {g.items.length} slides
+              </p>
+              <Carousel items={g.items} />
+            </div>
+          ))
+        : project.gallery && project.gallery.length > 0 && (
+            <Carousel items={project.gallery} />
+          )}
 
       {project.reels && project.reels.length > 0 && (
         <div>

@@ -34,7 +34,8 @@ export type Project = {
   collaborators?: string;
   coverKind?: "image" | "linkedin" | "press"; // "image" = photo cover (default)
   cover: MediaItem;
-  gallery: MediaItem[];
+  gallery?: MediaItem[]; // single gallery (e.g. FullFind)
+  galleries?: { title: string; items: MediaItem[] }[]; // multiple distinct carousels
   reels?: MediaItem[];
   metrics?: Metric[];
   articles?: Article[];
@@ -109,25 +110,34 @@ export const projects: Project[] = [
     period: "2024 — Present",
     summary:
       "A media platform focusing on designer toys, art toys, collectibles, and creative culture.", // p.5
-    collaborators: "In collaboration with @serp93666",
     cover: img("/media/edtan/post-1-01.jpg", "EdTan For Fun — Behind the Shelf carousel cover"),
-    gallery: [
-      img("/media/edtan/post-1-01.jpg", "EdTan — Behind the Shelf, slide 1"),
-      img("/media/edtan/post-1-02.jpg", "EdTan — Behind the Shelf, slide 2"),
-      img("/media/edtan/post-1-03.jpg", "EdTan — Behind the Shelf, slide 3"),
-      img("/media/edtan/post-1-04.jpg", "EdTan — Behind the Shelf, slide 4"),
-      img("/media/edtan/post-1-05.jpg", "EdTan — Behind the Shelf, slide 5"),
-      img("/media/edtan/post-1-06.jpg", "EdTan — Behind the Shelf, slide 6"),
-      vid("/media/edtan/post-1-07.mp4", "/media/edtan/post-1-07.jpg", "EdTan — Behind the Shelf, video slide"),
-      img("/media/edtan/post-1-08.jpg", "EdTan — Behind the Shelf, slide 8"),
-      img("/media/edtan/post-2-01.jpg", "EdTan — Toy designer story, slide 1"),
-      img("/media/edtan/post-2-02.jpg", "EdTan — Toy designer story, slide 2"),
-      img("/media/edtan/post-2-03.jpg", "EdTan — Toy designer story, slide 3"),
-      img("/media/edtan/post-2-04.jpg", "EdTan — Toy designer story, slide 4"),
-      img("/media/edtan/post-2-05.jpg", "EdTan — Toy designer story, slide 5"),
-      img("/media/edtan/post-2-06.jpg", "EdTan — Toy designer story, slide 6"),
-      img("/media/edtan/post-2-07.jpg", "EdTan — Toy designer story, slide 7"),
-      img("/media/edtan/post-2-08.jpg", "EdTan — Toy designer story, slide 8"),
+    galleries: [
+      {
+        title: "Carousel 01",
+        items: [
+          img("/media/edtan/post-1-01.jpg", "EdTan — carousel 1, slide 1"),
+          img("/media/edtan/post-1-02.jpg", "EdTan — carousel 1, slide 2"),
+          img("/media/edtan/post-1-03.jpg", "EdTan — carousel 1, slide 3"),
+          img("/media/edtan/post-1-04.jpg", "EdTan — carousel 1, slide 4"),
+          img("/media/edtan/post-1-05.jpg", "EdTan — carousel 1, slide 5"),
+          img("/media/edtan/post-1-06.jpg", "EdTan — carousel 1, slide 6"),
+          vid("/media/edtan/post-1-07.mp4", "/media/edtan/post-1-07.jpg", "EdTan — carousel 1, video slide"),
+          img("/media/edtan/post-1-08.jpg", "EdTan — carousel 1, slide 8"),
+        ],
+      },
+      {
+        title: "Carousel 02",
+        items: [
+          img("/media/edtan/post-2-01.jpg", "EdTan — carousel 2, slide 1"),
+          img("/media/edtan/post-2-02.jpg", "EdTan — carousel 2, slide 2"),
+          img("/media/edtan/post-2-03.jpg", "EdTan — carousel 2, slide 3"),
+          img("/media/edtan/post-2-04.jpg", "EdTan — carousel 2, slide 4"),
+          img("/media/edtan/post-2-05.jpg", "EdTan — carousel 2, slide 5"),
+          img("/media/edtan/post-2-06.jpg", "EdTan — carousel 2, slide 6"),
+          img("/media/edtan/post-2-07.jpg", "EdTan — carousel 2, slide 7"),
+          img("/media/edtan/post-2-08.jpg", "EdTan — carousel 2, slide 8"),
+        ],
+      },
     ],
     reels: [
       vid("/media/edtan/reel-1.mp4", "/media/edtan/reel-1.jpg", "EdTan short-form reel 1"),
@@ -151,20 +161,29 @@ export const projects: Project[] = [
     period: "2025 — Present",
     summary:
       "Social content for an architectural designer & residential interior design consultant.", // p.8
-    collaborators: "In collaboration with @arch__render",
     cover: img("/media/morfo/post-1-01.jpg", "Morfo Associates & Maison — interior render"),
-    gallery: [
-      img("/media/morfo/post-1-01.jpg", "Morfo — post 1, slide 1"),
-      img("/media/morfo/post-1-02.jpg", "Morfo — post 1, slide 2"),
-      img("/media/morfo/post-1-03.jpg", "Morfo — post 1, slide 3"),
-      img("/media/morfo/post-1-04.jpg", "Morfo — post 1, slide 4"),
-      img("/media/morfo/post-1-05.jpg", "Morfo — post 1, slide 5"),
-      img("/media/morfo/post-2-01.jpg", "Morfo — post 2, slide 1"),
-      img("/media/morfo/post-2-02.jpg", "Morfo — post 2, slide 2"),
-      img("/media/morfo/post-2-03.jpg", "Morfo — post 2, slide 3"),
-      img("/media/morfo/post-2-04.jpg", "Morfo — post 2, slide 4"),
-      img("/media/morfo/post-2-05.jpg", "Morfo — post 2, slide 5"),
-      img("/media/morfo/post-2-06.jpg", "Morfo — post 2, slide 6"),
+    galleries: [
+      {
+        title: "Carousel 01",
+        items: [
+          img("/media/morfo/post-1-01.jpg", "Morfo — carousel 1, slide 1"),
+          img("/media/morfo/post-1-02.jpg", "Morfo — carousel 1, slide 2"),
+          img("/media/morfo/post-1-03.jpg", "Morfo — carousel 1, slide 3"),
+          img("/media/morfo/post-1-04.jpg", "Morfo — carousel 1, slide 4"),
+          img("/media/morfo/post-1-05.jpg", "Morfo — carousel 1, slide 5"),
+        ],
+      },
+      {
+        title: "Carousel 02",
+        items: [
+          img("/media/morfo/post-2-01.jpg", "Morfo — carousel 2, slide 1"),
+          img("/media/morfo/post-2-02.jpg", "Morfo — carousel 2, slide 2"),
+          img("/media/morfo/post-2-03.jpg", "Morfo — carousel 2, slide 3"),
+          img("/media/morfo/post-2-04.jpg", "Morfo — carousel 2, slide 4"),
+          img("/media/morfo/post-2-05.jpg", "Morfo — carousel 2, slide 5"),
+          img("/media/morfo/post-2-06.jpg", "Morfo — carousel 2, slide 6"),
+        ],
+      },
     ],
     reels: [
       vid("/media/morfo/reel-1.mp4", "/media/morfo/reel-1.jpg", "Morfo short-form reel 1"),
